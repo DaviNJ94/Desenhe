@@ -1,40 +1,17 @@
-let palavra;
-
 function setup() {
-  createCanvas(400, 400);
-
-  palavra = palavraAleatoria();
-}
-
-function palavraAleatoria() {
-  let palavras = ["Vazio Roxo", "Azul", "Vermelho"];
-  return random(palavras);
-}
-
-function inicializaCores() {
-  background("white");
-  fill("purple");
-  textSize(64);
-  textAlign(CENTER, CENTER);
-}
-
-function palavraParcial(minimo, maximo) {
-  let quantidade = map(mouseX, minimo, maximo, 1, palavra.length);
-  let parcial = palavra.substring(0, quantidade);
-  return parcial;
+  createCanvas(600, 600);
+  background("purple");
 }
 
 function draw() {
-  inicializaCores();
+  
 
-  let texto = palavraParcial(0, width);
-  text(texto, 200, 200);
+  stroke("cyan");
+  fill("blue");
+
+  //  console.log(mouseIsPressed);
+
+  if (mouseIsPressed) {
+    rect(mouseX, mouseY, 20, 35);
+  }
 }
-
-
-
-function lugaresBacanaParaPassear(diaDaSemana, bairro) {
-   // return ??
-}
-
-
